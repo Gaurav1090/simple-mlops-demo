@@ -13,10 +13,9 @@ def read_params(config_path):
 
 def get_data(config_path):
     config = read_params(config_path)
-    #print(config)
     data_path = config["data_source"]["s3_source"]
     df = pd.read_csv(data_path, sep=",", encoding="utf-8")
-    print(df.head())
+    return df
 
 
 if __name__ == '__main__':
